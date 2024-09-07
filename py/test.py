@@ -15,3 +15,34 @@ def timeit(func):
         return result
     return timeit_wrapper
 
+
+@timeit
+def fun(a):
+    n = len(a)
+    for i in range(1, n):
+        x = i
+        k = i-1
+        while a[k]>a[x] and k != -1:
+            a[k], a[x] = a[x], a[k]
+            k-=1
+            x-=1
+
+    print(a)
+
+@timeit
+def fun1(a):
+    n = len(a)
+    for i in range(1, n):
+        n = a[i]
+        k = i-1
+        while a[k] > n and k >= 0:
+            a[k+1] = a[k]
+            k-=1
+        a[k+1]=n
+
+    print(a)
+
+fun1([10,30,50,40,20, 5])
+fun([10,30,50,40,20, 5])
+
+
