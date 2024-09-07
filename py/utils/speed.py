@@ -10,7 +10,7 @@ def timeit(func):
         result = func(*args, **kwargs)
         end_time = time()
         total_time = end_time - start_time
-        print(f'Function {func.__name__}{str(args)[0:10]} {kwargs} Took {total_time * 1000:.8f} milliseconds')
+        print(f'Function {func.__name__}{str(args)[0:30]} {kwargs} Took {total_time * 1000:.8f} milliseconds')
         # print(f'Function {func.__name__}{args} {kwargs} Took {total_time:.8f} seconds')
         return result
     return timeit_wrapper
